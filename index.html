@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-vindo Cmte Paulo Leite</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(to top, #87ceeb, #b0e0e6);
+      font-family: sans-serif;
+    }
+
+    .intro {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .tugboat {
+      position: absolute;
+      top: 30%;
+      right: -600px;
+      width: 300px;
+      animation: sail 9s linear forwards;
+    }
+
+    .text {
+      position: absolute;
+      top: 70%;
+      right: -300px;
+      font-size: 2em;
+      font-weight: bold;
+      color: #333;
+      animation: sailText 13s linear forwards;
+    }
+
+    @keyframes sail {
+      0% { right: -600px; }
+      100% { right: 100%; }
+    }
+
+    @keyframes sailText {
+      0% { right: -300px; }
+      100% { right: 100%; }
+    }
+
+    .main-content {
+      display: none;
+      padding: 2rem;
+      text-align: center;
+    }
+    .towline {
+  position: absolute;
+  top: 74%;
+  right: -450px;
+  width: 350px;
+  height: 2px;
+  background-color: #555;
+  animation: towMove 11s linear forwards;
+}
+
+@keyframes towMove {
+  0% { right: -450px; }
+  100% { right: 100%; }
+}
+  </style>
+</head>
+<body>
+  <div class="intro">
+    <audio id="motor" autoplay>
+  <source src="" type="audio/mpeg">
+</audio>
+<audio id="ondas" autoplay loop>
+  <source src="imagem/mar-agitado-272999.mp3" type="audio/mpeg">
+</audio>
+
+
+
+    <img src="/imagem/opala2.jpg.png" alt="" class="tugboat">
+    <div class="towline"></div>
+    <div class="text">Cmte Paulo Leite</div>
+  </div>
+
+  <div class="main-content" id="main">
+    <h1>Bem-vindo ao site do Cmte Paulo Leite</h1>
+    <p>Conteúdo principal aqui...</p>
+  </div>
+
+  <script>
+  setTimeout(() => {
+    document.querySelector('.intro').style.display = 'none';
+    document.getElementById('main').style.display = 'block';
+
+    // Parar os áudios
+    document.getElementById('motor').pause();
+    document.getElementById('ondas').pause();
+  }, 8500);
+</script>
+</body>
+</html>
