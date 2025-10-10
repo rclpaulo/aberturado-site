@@ -24,6 +24,7 @@
       right: -600px;
       width: 300px;
       animation: sail 9s linear forwards;
+      z-index: 2;
     }
 
     .text {
@@ -65,6 +66,27 @@
   0% { right: -450px; }
   100% { right: 100%; }
 }
+
+.sea {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #1e90ff,
+    #1e90ff 20px,
+    #00bfff 20px,
+    #00bfff 40px
+  );
+  animation: wave 4s linear infinite;
+  z-index: 1;
+}
+
+@keyframes wave {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 0; }
+}
   </style>
 </head>
 <body>
@@ -87,6 +109,8 @@
     <h1>Bem-vindo ao site do Cmte Paulo Leite</h1>
     <p>Conteúdo principal aqui...</p>
   </div>
+
+  <div class="sea"></div>
 
   <script>
   setTimeout(() => {
